@@ -1,0 +1,35 @@
+---
+import ProjectItem from './ProjectItem.astro';
+
+const PROJECTS = [
+  {
+    title: 'Local AI',
+    description: 'Aplicaion web-local basada en langchain que permite interactuar con los distintos modelos de lenguaje de OpenAI, Anthropic y otros.\nAdicionalmente tiene soporte para los modelos que corren localmente con Ollama.',
+    href: 'https://local-aifront.vercel.app/',
+    src: '/video.mp4',
+    videoPosition: 'left',
+  },
+  {
+    title: 'Format Converter',
+    description: 'Aplicacion web basada en react-astro (frontend) y python (backend) que permite convertir archivos de un formato a otro, actualmente funciona para xml y json pero se espera que en el futuro soporte mas de 100 formatos diferentes.',
+    href: 'https://front-converter.vercel.app/',
+    src: '/formatConverter.mp4',
+    videoPosition: 'right',
+
+  },
+  {
+    title: 'POS (Point of Sale)',
+    description: 'Sistema de punto de venta (POS) para restaurantes, cafeterias y negocios de comida, permite gestionar los productos, ventas y clientes, utiliza autenticacion con JWT en Spring Security. Esta construido con react en el front, Springboot en el backend y postgreSQL como motor de base de datos.',
+    href: 'https://front-market-seven.vercel.app/',
+    src: '/pos.mp4',
+    videoPosition: 'left',
+
+  },
+];
+
+
+---
+
+<div class="flex flex-col gap-8 mt-14">
+  {PROJECTS.map((projectItem) => <ProjectItem {...projectItem} />)}
+</div>
