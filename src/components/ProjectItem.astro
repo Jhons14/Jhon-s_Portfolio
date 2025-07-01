@@ -32,7 +32,7 @@ const { title, src, href, description, tags } = Astro.props;
       class='flex flex-row flex-wrap my-2 mx-2 gap-x-2 gap-y-3 justify-center'
     >
       {
-        tags.map((tag) => (
+        tags.map((tag: any) => (
           <li>
             <span
               class={`flex gap-x-1 items-center rounded-full text-xs ${tag.class} py-1 px-2 `}
