@@ -86,6 +86,7 @@ const THEMES = ['Light', 'Dark', 'System'];
       themePreference === 'dark' || (themePreference === 'system' && matchMedia.matches);
 
     updateIcon(themePreference);
+    
     document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
   };
 
@@ -101,6 +102,7 @@ const THEMES = ['Light', 'Dark', 'System'];
 
   document.querySelectorAll('.themes-menu-option').forEach((element) => {
     element.addEventListener('click', (e) => {
+      
       localStorage.setItem('theme', e.target.innerText.toLowerCase().trim());
       updateTheme();
     });
