@@ -23,6 +23,7 @@ import Proyects from '@/components/Projects.astro';
       <Hero />
     </SectionContainer>
 
+    <div class="space-y-24">
     <!-- Experiencia -->
     <SectionContainer id="experiencia" >
       <TitleSection>
@@ -33,12 +34,13 @@ import Proyects from '@/components/Projects.astro';
     </SectionContainer>
 
     <!-- Proyectos -->
-    <SectionContainer id="proyectos" class="py-16 md:py-32">
+    <SectionContainer id="proyectos" >
       <TitleSection>
         <DeviceDesktop class="size-8" />
         Proyectos
       </TitleSection>
       <Proyects />
     </SectionContainer>
+    </div>
   </main>
 </Layout>
