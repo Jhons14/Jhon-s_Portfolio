@@ -1,32 +1,72 @@
 ---
 import ProjectItem from './ProjectItem.astro';
+import Tailwind from './icons/Tailwind.astro';
+import Langchain from './icons/Langchain.astro';
+import React from './icons/React.astro';
+import Python from './icons/Python.astro';
+import Spring from './icons/Spring.astro';
+import PostgreSQL from './icons/PostgreSQL.astro';
 
+const TAGS = {
+  TAILWIND: {
+    name: 'Tailwind CSS',
+    class: 'bg-[#003159] text-white',
+    icon: Tailwind,
+  },
+  LANGCHAIN: {
+    name: 'Langchain',
+    class: 'bg-[#1D3D3C] text-white',
+    icon: Langchain,
+  },
+  REACT: {
+    name: 'React JS',
+    class: 'bg-gray-800 text-white',
+    icon: React,
+  },
+  PYTHON: {
+    name: 'Python',
+    class: 'bg-yellow-700 text-white',
+    icon: Python,
+  },
+  SPRING: {
+    name: 'Spring',
+    class: 'bg-[#003300] text-white',
+    icon: Spring,
+  },
+  POSTGRESQL: {
+    name: 'PostgreSQL',
+    class: 'bg-[#24478f] text-white',
+    icon: PostgreSQL,
+  },
+};
 const PROJECTS = [
   {
     title: 'Local AI',
-    description: 'Web-local basada en langchain que permite interactuar con los distintos modelos LLM OpenAI para cloud y Ollama para local.',
+    description:
+      'Web-local basada en langchain que permite interactuar con los distintos modelos LLM OpenAI para cloud y Ollama para local.',
     href: 'https://local-aifront.vercel.app/',
     src: '/video.mp4',
+    tags: [TAGS.REACT, TAGS.LANGCHAIN, TAGS.TAILWIND],
   },
   {
     title: 'Format Converter',
-    description: 'Web basada en react-astro (frontend) y python (backend) que permite convertir archivos de un formato de texto a otro.',
+    description:
+      'Web basada en react-astro (frontend) y python (backend) que permite convertir archivos de un formato de texto a otro.',
     href: 'https://front-converter.vercel.app/',
     src: '/formatConverter.mp4',
-
+    tags: [TAGS.REACT, TAGS.PYTHON, TAGS.TAILWIND],
   },
   {
     title: 'POS (Point of Sale)',
-    description: 'Sistema de punto de venta (POS) que permite gestionar productos, ventas y clientes, utiliza autenticacion con JWT en Springboot, react y postgreSQL.',
+    description:
+      'Sistema de punto de venta (POS) que permite gestionar productos, ventas y clientes, utiliza autenticacion con JWT en Springboot, react y postgreSQL.',
     href: 'https://front-market-seven.vercel.app/',
     src: '/pos.mp4',
-
+    tags: [TAGS.REACT, TAGS.SPRING, TAGS.POSTGRESQL, TAGS.TAILWIND],
   },
 ];
-
-
 ---
 
-<div class="flex flex-col  sm:gap-20 gap-8 lg:mt-14 m-4 mt-5">
+<div class='flex flex-col sm:gap-20 gap-8 lg:mt-14 m-4 mt-5'>
   {PROJECTS.map((projectItem) => <ProjectItem {...projectItem} />)}
 </div>

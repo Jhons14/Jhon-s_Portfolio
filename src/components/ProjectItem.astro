@@ -1,19 +1,48 @@
 ---
-
-const { title, src, href,description,  } = Astro.props;
+const { title, src, href, description, tags } = Astro.props;
 ---
 
-    <div class='sm:grid sm:grid-cols-2 sm:gap-12 flex flex-col justify-center gap-4 items-center'>
-      <a href={href}
-          target='_blank'
-        class='flex object-cover rounded-lg h-fit border-white/40 border-2 w-full overflow-hidden hover:border-collapse hover:border-2 hover:border-yellow-600 '
-        >       
-        <video autoplay loop src={src} class=' rounded-lg hover:scale-110 transition-all transform duration-500' muted/>
-      </a>    
-      <div class='sm:gap-4 gap-1 text-center'>
-        <h3 class="font-bold sm:text-2xl text-sm text-yellow-500 dark:text-gray-300">{title}</h3>
-        <p class=" text-gray-400 sm:text-base text-xs">
-          {description}
-        </p> 
-      </div>  
-    </div>
+<div
+  class='sm:grid sm:grid-cols-2 sm:gap-12 flex flex-col justify-center gap-4 items-center'
+>
+  <a
+    href={href}
+    target='_blank'
+    class='flex object-cover rounded-lg h-fit border-white/40 border-2 w-full overflow-hidden hover:border-collapse hover:border-2 hover:border-yellow-600'
+  >
+    <video
+      autoplay
+      loop
+      src={src}
+      class='rounded-lg hover:scale-110 transition-all transform duration-500'
+      muted></video>
+  </a>
+  <div
+    class='flex flex-col sm:gap-2 h-full justify-center items-center gap-1 text-center'
+  >
+    <h3
+      class='font-bold sm:text-2xl text-sm text-yellow-500 dark:text-gray-300'
+    >
+      {title}
+    </h3>
+    <p class='text-gray-400 sm:text-base text-xs'>
+      {description}
+    </p>
+    <ul
+      class='flex flex-row flex-wrap my-2 mx-2 gap-x-2 gap-y-3 justify-center'
+    >
+      {
+        tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-1 items-center rounded-full text-xs ${tag.class} py-1 px-2 `}
+            >
+              <tag.icon class='size-4' />
+              {tag.name}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
