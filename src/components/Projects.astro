@@ -4,25 +4,22 @@ import ProjectItem from './ProjectItem.astro';
 const PROJECTS = [
   {
     title: 'Local AI',
-    description: 'Aplicaion web-local basada en langchain que permite interactuar con los distintos modelos de lenguaje de OpenAI, Anthropic y otros.\nAdicionalmente tiene soporte para los modelos que corren localmente con Ollama.',
+    description: 'Web-local basada en langchain que permite interactuar con los distintos modelos LLM OpenAI para cloud y Ollama para local.',
     href: 'https://local-aifront.vercel.app/',
     src: '/video.mp4',
-    videoPosition: 'left',
   },
   {
     title: 'Format Converter',
-    description: 'Aplicacion web basada en react-astro (frontend) y python (backend) que permite convertir archivos de un formato a otro, actualmente funciona para xml y json pero se espera que en el futuro soporte mas de 100 formatos diferentes.',
+    description: 'Web basada en react-astro (frontend) y python (backend) que permite convertir archivos de un formato de texto a otro.',
     href: 'https://front-converter.vercel.app/',
     src: '/formatConverter.mp4',
-    videoPosition: 'right',
 
   },
   {
     title: 'POS (Point of Sale)',
-    description: 'Sistema de punto de venta (POS) para restaurantes, cafeterias y negocios de comida, permite gestionar los productos, ventas y clientes, utiliza autenticacion con JWT en Spring Security. Esta construido con react en el front, Springboot en el backend y postgreSQL como motor de base de datos.',
+    description: 'Sistema de punto de venta (POS) que permite gestionar productos, ventas y clientes, utiliza autenticacion con JWT en Springboot, react y postgreSQL.',
     href: 'https://front-market-seven.vercel.app/',
     src: '/pos.mp4',
-    videoPosition: 'left',
 
   },
 ];
@@ -30,6 +27,6 @@ const PROJECTS = [
 
 ---
 
-<div class="flex flex-col sm:gap-20 gap-8 lg:mt-14 mt-5">
+<div class="flex flex-col  sm:gap-20 gap-8 lg:mt-14 m-4 mt-5">
   {PROJECTS.map((projectItem) => <ProjectItem {...projectItem} />)}
 </div>

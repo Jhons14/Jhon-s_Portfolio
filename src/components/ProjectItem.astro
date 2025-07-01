@@ -1,37 +1,19 @@
 ---
 
-const { title, src, href,description, videoPosition } = Astro.props;
+const { title, src, href,description,  } = Astro.props;
 ---
-  {videoPosition === 'left' ? (
-    <div class='grid grid-cols-2 sm:gap-12 gap-4 items-center'>
+
+    <div class='sm:grid sm:grid-cols-2 sm:gap-12 flex flex-col justify-center gap-4 items-center'>
       <a href={href}
           target='_blank'
         class='flex object-cover rounded-lg h-fit border-white/40 border-2 w-full overflow-hidden hover:border-collapse hover:border-2 hover:border-yellow-600 '
         >       
         <video autoplay loop src={src} class=' rounded-lg hover:scale-110 transition-all transform duration-500' muted/>
       </a>    
-      <div class='flex flex-col justify-center sm:gap-4 gap-1 text-center'>
+      <div class='sm:gap-4 gap-1 text-center'>
         <h3 class="font-bold sm:text-2xl text-sm text-yellow-500 dark:text-gray-300">{title}</h3>
         <p class=" text-gray-400 sm:text-base text-xs">
           {description}
         </p> 
       </div>  
     </div>
-    )     :    ( 
-    <div class='grid grid-cols-2 sm:gap-12 gap-4 items-center'>
-      <div class='flex flex-col justify-center sm:gap-4 gap-1 text-center'>
-        <h3 class="font-bold sm:text-2xl text-sm text-yellow-500 dark:text-gray-300">{title}</h3>
-        <p class=" text-gray-400 sm:text-base text-xs">
-          {description}
-        </p> 
-      </div>
-      <a
-        href={href}
-        target='_blank'
-        class='flex  object-cover rounded-lg h-fit border-white/40 border-2 w-full overflow-hidden hover:border-collapse hover:border-2 hover:border-yellow-600 '
-      >
-        <video autoplay loop src={src} class=' rounded-lg hover:scale-110 transition-all transform duration-500' muted/>
-      </a>
-    </div>
-
-  )}

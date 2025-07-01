@@ -20,14 +20,14 @@ const { date, title, company, description, link } = Astro.props;
       ></path>
     </svg>
   </div>
-  <div class="grid grid-cols-2 w-full gap-4 items-center">
-    <div class="flex flex-col h-full gap-2 my-2 sm:px-8 px-1">
+  <div class="sm:grid sm:grid-cols-2  w-full gap-4 items-center">
+    <div class="flex flex-col h-full gap-2 my-2 sm:px-8 ">
       <h3
-        class=" gap-8 sm:text-2xl text-sm font-semibold text-yellow-500 dark:text-blue-500"
+        class=" gap-8 sm:text-2xl font-semibold text-yellow-500 dark:text-blue-500"
       >
         {title}
       </h3>
-      <span class="sm:text-xl text-xs font-normal leading-none text-gray-700 dark:text-gray-500">
+      <span class="sm:text-xl font-normal leading-none text-gray-700 dark:text-gray-500">
         {company}
       </span>
       <time
@@ -36,7 +36,7 @@ const { date, title, company, description, link } = Astro.props;
       </time>
     </div>
     <div>
-    <p class="flex items-center justify-center sm:text-base text-xs font-normal text-gray-500 dark:text-gray-400 mb-4">
+    <p class="flex items-center justify-center sm:text-base text-sm font-normal text-gray-500 dark:text-gray-400 mb-4">
       {description}
     </p>
     {link && <LinkInLine href={link}> Saber mas... </LinkInLine>}
