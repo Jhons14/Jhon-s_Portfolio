@@ -13,9 +13,11 @@ const { title, src, href, description, tags } = Astro.props;
     <video
       autoplay
       loop
+      muted
+      playsinline
       src={src}
       class='rounded-lg hover:scale-110 transition-all transform duration-500'
-      muted></video>
+    ></video>
   </a>
   <div
     class='flex flex-col sm:gap-2 h-full justify-center items-center gap-1 text-center'
