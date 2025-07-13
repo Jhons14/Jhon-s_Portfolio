@@ -1,5 +1,7 @@
 ---
-const { title, src, href, description, tags } = Astro.props;
+import Github from './icons/Github.astro';
+
+const { title, src, href, description, tags, githubRef } = Astro.props;
 ---
 
 <div
@@ -16,7 +18,7 @@ const { title, src, href, description, tags } = Astro.props;
       muted
       playsinline
       src={src}
-      class='rounded-lg max-w-full h-auto block hover:scale-110 transition-all transform duration-500'
+      class='rounded-lg max-w-full h-auto block hover:scale-100 scale-125 transition-all transform duration-500'
     ></video>
   </a>
   <div
@@ -30,21 +32,34 @@ const { title, src, href, description, tags } = Astro.props;
     <p class='text-gray-400 sm:text-base text-xs'>
       {description}
     </p>
-    <ul
-      class='flex flex-row flex-wrap my-2 mx-2 gap-x-2 gap-y-3 justify-center'
-    >
-      {
-        tags.map((tag: any) => (
-          <li>
-            <span
-              class={`flex gap-x-1 items-center rounded-full text-xs ${tag.class} py-1 px-2 `}
-            >
-              <tag.icon class='size-4' />
-              {tag.name}
-            </span>
-          </li>
-        ))
-      }
-    </ul>
+
+    <div class='flex justify-between gap-4 items-center w-full'>
+      <ul
+        class='flex flex-row flex-wrap my-2 mx-2 gap-x-2 gap-y-3 justify-center'
+      >
+        {
+          tags.map((tag: any) => (
+            <li>
+              <span
+                class={`flex gap-x-1 items-center rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class='size-4' />
+                {tag.name}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+      <div class='flex justify-center'>
+        <a
+          href={githubRef}
+          target='_blank'
+          class='flex flex-col items-center justify-center w-min group'
+        >
+          <Github class='group-hover:text-blue-500 md:text-xl md:size-10' />
+          <span class='group-hover:text-blue-500'>Code</span>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
