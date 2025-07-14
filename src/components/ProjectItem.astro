@@ -24,10 +24,10 @@ const { title, src, href, description, tags, githubRef } = Astro.props;
   <div
     class='flex flex-col sm:gap-2 h-full justify-center items-center gap-1 text-center'
   >
-    <h3 class='font-bold sm:text-2xl text-sm text-yellow-700 dark:text-white'>
+    <h3 class='font-bold sm:text-2xl text-sm dark:text-white'>
       {title}
     </h3>
-    <p class='text-gray-400 sm:text-base text-xs'>
+    <p class='dark:text-gray-400 sm:text-base text-xs'>
       {description}
     </p>
 
@@ -54,8 +54,10 @@ const { title, src, href, description, tags, githubRef } = Astro.props;
           target='_blank'
           class='flex flex-col items-center justify-center w-min group'
         >
-          <Github class='group-hover:text-blue-500 md:text-xl md:size-10' />
-          <span class='group-hover:text-blue-500'>Code</span>
+          <Github
+            class='group-hover:text-blue-500 text-black md:text-xl md:size-10 dark:text-gray-400'
+          />
+          <span class='group-hover:text-blue-500 dark:text-gray-400'>Code</span>
         </a>
       </div>
     </div>
