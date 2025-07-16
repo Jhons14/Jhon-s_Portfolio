@@ -1,0 +1,60 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import SectionContainer from '@/components/SectionContainer.astro';
+import Hero from '@/components/Hero.astro';
+import TitleSection from '@/components/TitleSection.astro';
+import Experience from '@/components/Experience.astro';
+import BriefCase from '@/components/icons/BriefCase.astro';
+import DeviceDesktop from '@/components/icons/DeviceDesktop.astro';
+import Projects from '@/components/Projects.astro';
+import AboutMe from '@/components/AboutMe.astro';
+import ProfileCheck from '@/components/icons/ProfileCheck.astro';
+import en from '../../i18n/en.json';
+import es from '../../i18n/es.json';
+
+export async function getStaticPaths() {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'es' } }];
+}
+
+const lang = Astro.params.lang;
+const t = lang === 'es' ? es : en;
+---
+
+<Layout title={t.title} description={t.description}>
+  <main class='flex flex-col sm:mx-16 mx-4'>
+    <SectionContainer id='hero' class='py-24 md:py-32'>
+      <Hero />
+    </SectionContainer>
+
+    <div class='space-y-24'>
+      <!-- Experiencia -->
+      <SectionContainer id='experiencia'>
+        <TitleSection
+          ><BriefCase class='md:size-12 size-8' />{
+            lang === 'es' ? 'Experiencia laboral' : 'Work experience'
+          }</TitleSection
+        >
+        <Experience experience={t.experience} />
+      </SectionContainer>
+
+      <!-- Proyectos -->
+      <SectionContainer id='proyectos'>
+        <TitleSection
+          ><DeviceDesktop class='md:size-12 size-8' />{
+            lang === 'es' ? 'Proyectos' : 'Projects'
+          }</TitleSection
+        >
+        <Projects projectDescription={t.projectDescription} />
+      </SectionContainer>
+
+      <SectionContainer id='sobre-mi'>
+        <TitleSection>
+          <ProfileCheck class='md:size-12 size-8' />{
+            lang === 'es' ? 'Sobre mi' : 'About me'
+          }</TitleSection
+        >
+        <AboutMe HTMLDescription={t.aboutMe.HTMLDescription} />
+      </SectionContainer>
+    </div>
+  </main>
+</Layout>

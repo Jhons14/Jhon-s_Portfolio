@@ -1,0 +1,31 @@
+{
+  "title": "Portfolio de Jhon Orjuela, integrations backend developer, +5 años de experiencia",
+  "description": "Contacta a Jhon Orjuela, especializado en soluciones personalizadas",
+  "hero": {
+    "title": "Hola, soy Jhon",
+    "description": "+5 años de experiencia. Ingeniero de Software de Bogota, Colombia. Especializado en el desarrollo de aplicaciones web únicas."
+  },
+  "experience": [
+    {
+      "date": "2022 - Actualmente",
+      "title": "Integration Developer",
+      "company": "Banco De Occidente S.A",
+      "description": "Proporciono soluciones backend a los proyectos de la vicepresidencia de operaciones y tecnologia en el sector bancario utilizando herramientas de IBM como App Connect Enterprise y Data Power",
+      "link": "https://www.bancodeoccidente.com.co/"
+    },
+    {
+      "date": "2020 - 2022",
+      "title": "Full Stack Developer assistant",
+      "company": "Corporacion Universitaria Republicana De Colombia",
+      "description": "Contribuí en el desarrollo de sistemas de contabilidad, inferencia y manejo de grafos para toma de decisiones usando JAVA y PostgreSQL"
+    }
+  ],
+  "projectDescription": {
+    "localAI": "Web-local basada en langchain que permite interactuar con los distintos modelos LLM OpenAI para cloud y Ollama para local.",
+    "formatParser": "Website que permite transformar textos entre distintos formatos.",
+    "pos": "Sistema de punto de venta (POS) que permite gestionar productos, ventas y clientes. Implementa manejo de sesion y autenticacion con JWT Spring Security."
+  },
+  "aboutMe": {
+    "HTMLDescription": "<p>Empecé en la programación a los 15 años, antes de ir a la univeridad. Actualmente proporciono soluciones para la banca empresarial <strong>desarrollando workflows de integracion backend usando herramientas de IBM y ORACLE.</strong></p><p>Algunos de mis trabajos mas desafiantes incluyen proyectos como <strong>tokenizacion de tarjetas credito e implementacion del modelo de transdferencias interbancarias Bre-B</strong>.</p><p>Como actividades adicionales me gustan los instrumentos y la musica,actualmente me encuentro cursando para <strong>certificarme en ingles C1<em class='italic'>en American School Way.</em></strong> Mi objetivo es encontrar un lugar en el cual pueda fortalecer mi comunicacion en ingles en el ambito empresarial.</p>"
+  }
+}

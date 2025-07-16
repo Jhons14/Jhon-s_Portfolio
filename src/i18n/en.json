@@ -1,0 +1,31 @@
+{
+  "title": "Jhon Orjuela's Portfolio, integrations backend developer, 5+ years of experience",
+  "description": "Contact Jhon Orjuela, specialized in custom solutions",
+  "hero": {
+    "title": "Hey, I'm Jhon",
+    "description": "5+ years of experience. Software Engineer from Bogotá, Colombia. Specialized in developing unique web applications."
+  },
+  "experience": [
+    {
+      "date": "2022 - Present",
+      "title": "Integration Developer",
+      "company": "Banco De Occidente S.A",
+      "description": "I provide backend solutions to the projects of the operations and technology vice presidency in the banking sector using IBM tools such as App Connect Enterprise and DataPower",
+      "link": "https://www.bancodeoccidente.com.co/"
+    },
+    {
+      "date": "2020 - 2022",
+      "title": "Full Stack Developer Assistant",
+      "company": "Corporación Universitaria Republicana De Colombia",
+      "description": "I contributed to the development of accounting, inference, and graph management systems for decision-making using JAVA and PostgreSQL"
+    }
+  ],
+  "projectDescription": {
+    "localAI": "Local web-based app using Langchain that allows interaction with various LLM models — OpenAI for cloud and Ollama for local.",
+    "formatParser": "Website that enables transforming text between different formats.",
+    "pos": "Point of Sale (POS) system that allows managing products, sales, and customers. Implements session handling and authentication using JWT and Spring Security."
+  },
+  "aboutMe": {
+    "HTMLDescription": "<p>I started programming at the age of 15, before going to university. Currently, I provide solutions for corporate banking <strong>developing backend integration workflows using IBM and ORACLE tools.</strong></p><p>Some of my most challenging projects include <strong>credit card tokenization and the implementation of the Bre-B interbank transfer model.</strong></p><p>As additional activities I like instruments and music, I am currently studying to get a <strong>C1 English certification<em class='italic'>at American School Way.</em></strong> My goal is to find a place where I can strengthen my English communication in the business field.</p>"
+  }
+}

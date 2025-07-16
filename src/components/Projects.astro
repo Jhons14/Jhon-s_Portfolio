@@ -7,6 +7,8 @@ import Python from './icons/Python.astro';
 import Spring from './icons/Spring.astro';
 import PostgreSQL from './icons/PostgreSQL.astro';
 
+const { projectDescription } = Astro.props;
+
 const TAGS = {
   TAILWIND: {
     name: 'Tailwind CSS',
@@ -42,8 +44,7 @@ const TAGS = {
 const PROJECTS = [
   {
     title: 'Local AI',
-    description:
-      'Web-local basada en langchain que permite interactuar con los distintos modelos LLM OpenAI para cloud y Ollama para local.',
+    description: projectDescription.localAI,
     href: 'https://localai.jstevenon.com',
     src: '/video.mp4',
     tags: [TAGS.REACT, TAGS.LANGCHAIN, TAGS.TAILWIND],
@@ -51,8 +52,7 @@ const PROJECTS = [
   },
   {
     title: 'Format Converter',
-    description:
-      'Website que permite transformar textos entre distintos formatos.',
+    description: projectDescription.formatParser,
     href: 'https://formatparser.jstevenon.com',
     src: '/formatConverter.mp4',
     tags: [TAGS.REACT, TAGS.PYTHON, TAGS.TAILWIND],
@@ -60,8 +60,7 @@ const PROJECTS = [
   },
   {
     title: 'POS (Point of Sale)',
-    description:
-      'Sistema de punto de venta (POS) que permite gestionar productos, ventas y clientes. Implementa manejo de sesion y autenticacion con JWT Spring Security.',
+    description: projectDescription.pos,
     href: 'https://possystem.jstevenon.com/',
     src: '/pos.mp4',
     tags: [TAGS.REACT, TAGS.SPRING, TAGS.POSTGRESQL, TAGS.TAILWIND],

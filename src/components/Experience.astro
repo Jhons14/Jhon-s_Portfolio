@@ -1,27 +1,19 @@
 ---
 import ExperienceItem from '@/components/ExperienceItem.astro';
 
-const EXPERIENCE = [
-  {
-    date: '2022 - Actualmente',
-    title: 'Integration Developer',
-    company: 'Banco De Occidente S.A',
-    description:
-      'Proporciono soluciones backend a los proyectos de la vicepresidencia de operaciones y tecnologia en el sector bancario utilizando herramientas de IBM como App Connect Enterprise y Data Power',
-    link: 'https://www.bancodeoccidente.com.co/',
-  },
-  {
-    date: '2020 - 2022',
-    title: 'Full Stack Developer assistant',
-    company: 'Corporacion Universitaria Republicana De Colombia',
-    description:
-      'Contribuí en el desarrollo de sistemas de contabilidad, inferencia y manejo de grafos para toma de decisiones usando JAVA y PostgreSQL',
-  },
-];
+type experienceItem = {
+  title: string;
+};
+
+const { experience } = Astro.props;
 ---
 
 <ol
-  class='relative flex flex-col lg:gap-16 gap-6 mx-4 border-s border-yellow-500 dark:border-gray-700'
+  class='relative flex flex-col md:gap-16 gap-6 mx-4 border-s border-yellow-500 dark:border-gray-700'
 >
-  {EXPERIENCE.map((experienceItem) => <ExperienceItem {...experienceItem} />)}
+  {
+    experience.map((experienceItem: experienceItem) => (
+      <ExperienceItem {...experienceItem} />
+    ))
+  }
 </ol>

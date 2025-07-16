@@ -1,0 +1,86 @@
+---
+const { lang } = Astro.params;
+const otherLang = lang === 'es' ? 'en' : 'es';
+const basePath =
+  '/' + [otherLang, ...Astro.url.pathname.split('/').slice(2)].join('/');
+const LANGUAGES = [
+  { lang: 'English', href: '/en/' },
+  { lang: 'Español', href: '/es/' },
+];
+---
+
+<div class='relative ml-1 mr-1'>
+  <button
+    transition:persist
+    id='lang-toggle-btn'
+    class='appearance-none border-none flex hover:scale-125 transition'
+  >
+    <span class='lang-toggle-icon size-5 transition-all'>{lang}</span>
+  </button>
+  <div
+    transition:persist
+    id='lang-menu'
+    class='absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md'
+  >
+    <ul>
+      {
+        LANGUAGES.map((langItem) => (
+          <li class='lang-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm'>
+            <a
+              id='lang-link'
+              href={langItem.href}
+              onclick='event.preventDefault(); 
+           const hash = window.location.hash;
+           window.location.href = this.href + hash;'
+            >
+              {langItem.lang}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  #lang-menu.open {
+    display: inline;
+    animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  #lang-link {
+    display: flex;
+
+    cursor: pointer;
+    width: 100%;
+  }
+
+  @keyframes scale-up-center {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script is:inline>
+  const langMenu = document.getElementById('lang-menu');
+
+  document.addEventListener('click', () => langMenu.classList.remove('open'));
+
+  document.getElementById('lang-toggle-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isClosed = !langMenu.classList.contains('open');
+
+    langMenu.classList[isClosed ? 'add' : 'remove']('open');
+  });
+
+  document.addEventListener('astro:after-swap', () => {
+    window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+  });
+</script>
